@@ -17,9 +17,9 @@ var empty = [
 ];
 
 var stripe = [
-  "_^_^_^",
   "^_^_^_",
-  "_^_^_^"
+  "^_^_^_",
+  "^_^_^_"
 ];
 
 
@@ -97,3 +97,10 @@ tile_type.push(bcm);      //9
 tile_type.push(mcl);      //10
 tile_type.push(mcr);      //11
 tile_type.push(mcm);      //12
+
+
+var base_pattern = [
+  4,  6,  5,
+  10, 12, 11,
+  7,  9,  8
+];

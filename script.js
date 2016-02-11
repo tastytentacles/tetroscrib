@@ -1,24 +1,22 @@
 var loop_time = 66;
 
+var rose_point;
 var dave_point = document.getElementById("dave");
 var dave_frame = [
-  "core loop [#-----]",
-  "core loop [-#----]",
-  "core loop [--#---]",
-  "core loop [---#--]",
-  "core loop [----#-]",
-  "core loop [-----#]"
+  "core loop [#]",
+  "core loop [-]"
 ];
 
-var rose_point;
+var date_block = [
+  0, 0, 0, 0, 0, 0
+];
 
+date_block[5] = (1 << 3) | (1 << 0);
+// console.log(date_block[5]);
 
 var d = 0;
 var r = 0;
 function logic_call() {
-  rose_point = document.getElementById("rose");
-  // rose_point.innerText = "dick";
-
   window.setTimeout(logic_call, loop_time);
 
   if (d + 1 < dave_frame.length)
@@ -27,14 +25,15 @@ function logic_call() {
     { d = 0; }
   r += 1;
 
+  grepdata();
+
   dave_point.text = dave_frame[d];
   rose_point.innerText = pushline();
-  // pannelinit();
 }
 
 function init() {
   window.setTimeout(logic_call, loop_time);
-
+  rose_point = document.getElementById("rose");
 
   pannelinit();
 }
